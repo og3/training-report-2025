@@ -63,7 +63,21 @@
     <p class="mb-6 text-sm text-gray-600">
       ※この記録は、採用企業に向けた「活動履歴」としてだけでなく、他の職業訓練生にとっての「リアルな実録」としても残しています。
     </p>
-    <ul id="joblog-list" class="border-l-2 border-indigo-500 pl-4 space-y-4"></ul>
+
+    <div class="mb-8">
+      <h3 class="text-xl font-bold mb-2">■ 前提</h3>
+      <ul id="joblog-summary" class="list-disc list-inside text-gray-700 space-y-2"></ul>
+    </div>
+
+    <div class="mb-8">
+      <h3 class="text-xl font-bold mb-2">■ タイムライン</h3>
+      <ul id="joblog-list" class="border-l-2 border-indigo-500 pl-4 space-y-4"></ul>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-bold mb-2">■ 所感</h3>
+      <ul id="joblog-notes" class="list-disc list-inside text-gray-700 space-y-2"></ul>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -102,7 +116,6 @@
           content.innerHTML = ` - ${entry.event}`;
           wrapper.appendChild(content);
 
-          // 追加：aタグのclass設定を適切に反映
           content.querySelectorAll('a').forEach(link => {
             link.className = 'text-indigo-600 hover:underline';
           });
@@ -131,66 +144,49 @@
       });
 
     // joblog.json
-  fetch('datas/joblog.json')
-    .then(res => res.json())
-    .then(data => {
-      const list = document.getElementById('joblog-list');
+    fetch('datas/joblog.json')
+      .then(res => res.json())
+      .then(data => {
+        const summaryList = document.getElementById('joblog-summary');
+        const timelineList = document.getElementById('joblog-list');
+        const notesList = document.getElementById('joblog-notes');
 
-      if (data.summary) {
-        const li = document.createElement('li');
-        const title = document.createElement('span');
-        title.className = 'font-bold text-indigo-600';
-        title.textContent = '前提';
+        if (data.summary) {
+          const summaryItems = [data.summary.experience, data.summary.conditions];
+          summaryItems.forEach(text => {
+            const li = document.createElement('li');
+            li.textContent = text;
+            summaryList.appendChild(li);
+          });
+        }
 
-        const summaryDiv = document.createElement('div');
-        summaryDiv.className = 'mb-2';
-        summaryDiv.appendChild(title);
+        if (data.timeline) {
+          data.timeline.forEach(entry => {
+            const li = document.createElement('li');
+            const span = document.createElement('span');
+            span.className = 'font-bold text-indigo-600';
+            span.textContent = entry.date;
 
-        const content = document.createElement('div');
-        content.innerHTML = `・${data.summary.experience}<br>・${data.summary.conditions}`;
-        summaryDiv.appendChild(content);
+            const wrapper = document.createElement('div');
+            wrapper.appendChild(span);
 
-        li.appendChild(summaryDiv);
-        list.appendChild(li);
-      }
+            const content = document.createElement('span');
+            content.innerHTML = ` - ${entry.event}`;
+            wrapper.appendChild(content);
 
-      if (data.timeline) {
-        data.timeline.forEach(entry => {
-          const li = document.createElement('li');
-          const span = document.createElement('span');
-          span.className = 'font-bold text-indigo-600';
-          span.textContent = entry.date;
+            li.appendChild(wrapper);
+            timelineList.appendChild(li);
+          });
+        }
 
-          const wrapper = document.createElement('div');
-          wrapper.appendChild(span);
-
-          const content = document.createElement('span');
-          content.innerHTML = ` - ${entry.event}`;
-          wrapper.appendChild(content);
-
-          li.appendChild(wrapper);
-          list.appendChild(li);
-        });
-      }
-
-      if (data.notes) {
-        const li = document.createElement('li');
-        const title = document.createElement('span');
-        title.className = 'font-bold text-indigo-600';
-        title.textContent = '所感';
-
-        const noteDiv = document.createElement('div');
-        noteDiv.className = 'mb-2';
-        noteDiv.appendChild(title);
-
-        const content = document.createElement('div');
-        content.innerHTML = data.notes.map(p => `・${p}`).join('<br>');
-        noteDiv.appendChild(content);
-
-        li.appendChild(noteDiv);
-        list.appendChild(li);
-      }
-    });
+        if (data.notes) {
+          data.notes.forEach(note => {
+            const li = document.createElement('li');
+            li.textContent = note;
+            notesList.appendChild(li);
+          });
+        }
+      });
   </script>
 </body>
 </html>
