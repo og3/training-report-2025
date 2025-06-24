@@ -44,7 +44,7 @@
     },
     {
       "date": "2月17〜27日",
-      "event": "『sudachi』や『mecab』を使った形態素解析で文字列を使ったモデル構築を目指し、レビュー再評価ツールを試作。<a href=\"https://docs.google.com/spreadsheets/d/1X0Ecs4NomNFioqBZDX0kqV6hGc3vVrX_hyu8REYyJTM/edit?gid=640155923#gid=640155923\" target=\"_blank\">経緯</a>"
+      "event": "『sudachi』や『mecab』を使った形態素解析で文字列を使ったモデル構築を目指し、レビュー再評価ツールの実装を試みるも、文章を「イイ感じ」に区切れずに断念。<a href=\"https://docs.google.com/spreadsheets/d/1X0Ecs4NomNFioqBZDX0kqV6hGc3vVrX_hyu8REYyJTM/edit?gid=640155923#gid=640155923\" target=\"_blank\">形態素解析の例</a>"
     },
     {
       "date": "3月24日～4月4日",
@@ -52,7 +52,7 @@
     },
     {
       "date": "6月4～5日",
-      "event": "QRカメラの暴走・高温問題を解決、音声フィードバックも追加。<a href=\"https://github.com/og3/qrcode_in_out_management_with_Raspberry_Pi\" target=\"_blank\">GitHub</a>"
+      "event": "QRカメラの「起動しすぎ問題」による熱暴走を解決し、読み取り完了を音で知らせる機能を追加。<a href=\"https://github.com/og3/qrcode_in_out_management_with_Raspberry_Pi\" target=\"_blank\">GitHub</a>"
     }
   ]
 }
