@@ -58,12 +58,12 @@
   </section>
 
   <!-- Job Log Section -->
-  <section id="joblog" class="py-16 px-4 max-w-3xl mx-auto">
+  <section id="joblog" class="py-16 px-4 max-w-4xl mx-auto">
     <h2 class="text-2xl font-semibold mb-4">就職活動ログ</h2>
     <p class="mb-6 text-sm text-gray-600">
       ※この記録は、採用企業に向けた「活動履歴」としてだけでなく、他の職業訓練生にとっての「リアルな実録」としても残しています。
     </p>
-    <ul id="joblog-list" class="space-y-4 text-gray-700"></ul>
+    <ul id="joblog-list" class="border-l-2 border-indigo-500 pl-4 space-y-4"></ul>
   </section>
 
   <!-- Footer -->
@@ -131,32 +131,66 @@
       });
 
     // joblog.json
-    fetch('datas/joblog.json')
-      .then(res => res.json())
-      .then(data => {
-        const list = document.getElementById('joblog-list');
-        if (data.summary) {
-          const summaryLi = document.createElement('li');
-          summaryLi.innerHTML = `
-            <strong>前提:</strong><br>
-            ・${data.summary.experience}<br>
-            ・${data.summary.conditions}
-          `;
-          list.appendChild(summaryLi);
-        }
-        if (data.timeline) {
-          data.timeline.forEach(entry => {
-            const li = document.createElement('li');
-            li.innerHTML = `<strong>${entry.date}:</strong> ${entry.event}`;
-            list.appendChild(li);
-          });
-        }
-        if (data.notes) {
-          const notesLi = document.createElement('li');
-          notesLi.innerHTML = `<strong>所感:</strong><br>${data.notes.map(p => `・${p}`).join('<br>')}`;
-          list.appendChild(notesLi);
-        }
-      });
+  fetch('datas/joblog.json')
+    .then(res => res.json())
+    .then(data => {
+      const list = document.getElementById('joblog-list');
+
+      if (data.summary) {
+        const li = document.createElement('li');
+        const title = document.createElement('span');
+        title.className = 'font-bold text-indigo-600';
+        title.textContent = '前提';
+
+        const summaryDiv = document.createElement('div');
+        summaryDiv.className = 'mb-2';
+        summaryDiv.appendChild(title);
+
+        const content = document.createElement('div');
+        content.innerHTML = `・${data.summary.experience}<br>・${data.summary.conditions}`;
+        summaryDiv.appendChild(content);
+
+        li.appendChild(summaryDiv);
+        list.appendChild(li);
+      }
+
+      if (data.timeline) {
+        data.timeline.forEach(entry => {
+          const li = document.createElement('li');
+          const span = document.createElement('span');
+          span.className = 'font-bold text-indigo-600';
+          span.textContent = entry.date;
+
+          const wrapper = document.createElement('div');
+          wrapper.appendChild(span);
+
+          const content = document.createElement('span');
+          content.innerHTML = ` - ${entry.event}`;
+          wrapper.appendChild(content);
+
+          li.appendChild(wrapper);
+          list.appendChild(li);
+        });
+      }
+
+      if (data.notes) {
+        const li = document.createElement('li');
+        const title = document.createElement('span');
+        title.className = 'font-bold text-indigo-600';
+        title.textContent = '所感';
+
+        const noteDiv = document.createElement('div');
+        noteDiv.className = 'mb-2';
+        noteDiv.appendChild(title);
+
+        const content = document.createElement('div');
+        content.innerHTML = data.notes.map(p => `・${p}`).join('<br>');
+        noteDiv.appendChild(content);
+
+        li.appendChild(noteDiv);
+        list.appendChild(li);
+      }
+    });
   </script>
 </body>
 </html>
