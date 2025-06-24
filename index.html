@@ -76,7 +76,15 @@
         const timeline = document.getElementById('training-timeline');
         data.timeline.forEach(entry => {
           const li = document.createElement('li');
-          li.innerHTML = `<div><span class="font-bold text-indigo-600">${entry.date}</span> - ${entry.event}</div>`;
+          const span = document.createElement('span');
+          span.className = 'font-bold text-indigo-600';
+          span.textContent = entry.date;
+
+          const wrapper = document.createElement('div');
+          wrapper.appendChild(span);
+          wrapper.insertAdjacentHTML('beforeend', ` - ${entry.event}`);
+
+          li.appendChild(wrapper);
           timeline.appendChild(li);
         });
       });
