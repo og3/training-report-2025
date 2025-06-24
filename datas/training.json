@@ -28,15 +28,15 @@
     },
     {
       "date": "1月22～28日",
-      "event": "カードゲーム『ブラックジャック』のCUIゲームを作成。[pytest](https://github.com/og3/21/commit/62de755310e9c9a6f204a04840fca72d0111c475)や[black](https://github.com/og3/21/commit/33037bca0d52b3ac710739699945bf91d57c09b9)を導入。＠『21』"
+      "event": "カードゲーム『ブラックジャック』のCUIゲームを作成。<a href=\"https://github.com/og3/21/commit/62de755310e9c9a6f204a04840fca72d0111c475\" target=\"_blank\">pytest</a>や<a href=\"https://github.com/og3/21/commit/33037bca0d52b3ac710739699945bf91d57c09b9\" target=\"_blank\">black</a>を導入。＠『21』"
     },
     {
       "date": "1月29日～2月7日",
-      "event": "『21』のCPU強化にランダムフォレストを使用。[コードはこちら](https://github.com/og3/21/blob/master/datas/npc_style_data/generate_npc_style_data.py)"
+      "event": "『21』のCPU強化にランダムフォレストを使用。<a href=\"https://github.com/og3/21/blob/master/datas/npc_style_data/generate_npc_style_data.py\" target=\"_blank\">コードはこちら</a>"
     },
     {
       "date": "2月6～7日",
-      "event": "引越し先の回線速度調査用スクリプトを作成。[結果表](https://docs.google.com/spreadsheets/d/1ydmCWBJR59Ars2bMpA9ru-O0KPv52NzAzD6sRuLYYDY/edit?gid=0#gid=0)＠『speedtest』"
+      "event": "引越し先の回線速度調査用スクリプトを作成。<a href=\"https://docs.google.com/spreadsheets/d/1ydmCWBJR59Ars2bMpA9ru-O0KPv52NzAzD6sRuLYYDY/edit?gid=0#gid=0\" target=\"_blank\">結果表</a>＠『speedtest』"
     },
     {
       "date": "2月8日～",
@@ -44,15 +44,15 @@
     },
     {
       "date": "2月17〜27日",
-      "event": "文字列を使ったモデル構築を目指し、レビュー再評価ツールを試作。[経緯](https://docs.google.com/spreadsheets/d/1X0Ecs4NomNFioqBZDX0kqV6hGc3vVrX_hyu8REYyJTM/edit?gid=640155923#gid=640155923)"
+      "event": "文字列を使ったモデル構築を目指し、レビュー再評価ツールを試作。<a href=\"https://docs.google.com/spreadsheets/d/1X0Ecs4NomNFioqBZDX0kqV6hGc3vVrX_hyu8REYyJTM/edit?gid=640155923#gid=640155923\" target=\"_blank\">経緯</a>"
     },
     {
       "date": "3月24日～4月4日",
-      "event": "電気使用量予測モデルを作成するも、特徴量設計に課題。[失敗記録](https://github.com/og3/denkiyohou/issues)"
+      "event": "電気使用量予測モデルを作成するも、特徴量設計に課題。<a href=\"https://github.com/og3/denkiyohou/issues\" target=\"_blank\">失敗記録</a>"
     },
     {
       "date": "6月4～5日",
-      "event": "QRカメラの暴走・高温問題を解決、音声フィードバックも追加。[GitHub](https://github.com/og3/qrcode_in_out_management_with_Raspberry_Pi)"
+      "event": "QRカメラの暴走・高温問題を解決、音声フィードバックも追加。<a href=\"https://github.com/og3/qrcode_in_out_management_with_Raspberry_Pi\" target=\"_blank\">GitHub</a>"
     }
   ]
 }
