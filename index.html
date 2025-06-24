@@ -29,11 +29,9 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-16 px-4 max-w-3xl mx-auto bg-gray-50 rounded-lg shadow">
+  <section id="about" class="py-24 px-4 max-w-3xl mx-auto bg-gray-50 rounded-lg shadow mt-16">
     <h2 class="text-2xl font-semibold mb-4">自己紹介</h2>
-    <p class="leading-relaxed">
-      2016年に社会人をスタートし、業務系・ゲーム系を中心にWebエンジニアとして従事。Rails／Vueを用いた開発や、カスタマーサポート部門の立ち上げ経験もあります。健康・家庭の事情で一時休職後、現在はAI・IoT分野の技術習得と再就職に向けた準備を進めています。
-    </p>
+    <p id="about-text" class="leading-relaxed"></p>
   </section>
 
   <!-- Training Section -->
@@ -90,6 +88,13 @@
   </footer>
 
   <script>
+    // about.json 読み込み
+    fetch('datas/about.json')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('about-text').textContent = data.text;
+    });
+
     // training.json
     fetch('datas/training.json')
       .then(res => res.json())
