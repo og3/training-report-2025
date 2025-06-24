@@ -134,11 +134,23 @@
       .then(res => res.json())
       .then(data => {
         const list = document.getElementById('joblog-list');
-        data.forEach(entry => {
-          const li = document.createElement('li');
-          li.innerHTML = `<strong>${entry.date}:</strong> ${entry.event}`;
-          list.appendChild(li);
-        });
+        if (data.summary) {
+          const summaryLi = document.createElement('li');
+          summaryLi.innerHTML = `<strong>前提:</strong><br>${data.summary.map(p => `・${p}`).join('<br>')}`;
+          list.appendChild(summaryLi);
+        }
+        if (data.timeline) {
+          data.timeline.forEach(entry => {
+            const li = document.createElement('li');
+            li.innerHTML = `<strong>${entry.date}:</strong> ${entry.event}`;
+            list.appendChild(li);
+          });
+        }
+        if (data.notes) {
+          const notesLi = document.createElement('li');
+          notesLi.innerHTML = `<strong>所感:</strong><br>${data.notes.map(p => `・${p}`).join('<br>')}`;
+          list.appendChild(notesLi);
+        }
       });
   </script>
 </body>
