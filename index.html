@@ -22,31 +22,93 @@
     </p>
   </section>
 
-  <!-- Works Section -->
-  <section class="py-16 px-4 max-w-5xl mx-auto">
-    <h2 class="text-2xl font-semibold mb-6">制作物一覧</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white p-4 rounded shadow">
-        <h3 class="text-lg font-bold">ポケポケドローシミュレータ</h3>
-        <p class="text-sm text-gray-600">ポケモンカードのデッキからのドローを統計的に再現するツール。</p>
-        <a href="#" class="text-indigo-600 text-sm mt-2 inline-block">GitHubを見る</a>
-      </div>
-      <div class="bg-white p-4 rounded shadow">
-        <h3 class="text-lg font-bold">QRカメラスキャナ</h3>
-        <p class="text-sm text-gray-600">Raspberry PiとPythonを使ったCUI対応のQRコードスキャナ。</p>
-        <a href="#" class="text-indigo-600 text-sm mt-2 inline-block">GitHubを見る</a>
-      </div>
-      <div class="bg-white p-4 rounded shadow">
-        <h3 class="text-lg font-bold">IoT温湿度モニター</h3>
-        <p class="text-sm text-gray-600">センサーを使って温湿度をWebで可視化するFlaskアプリ。</p>
-        <a href="#" class="text-indigo-600 text-sm mt-2 inline-block">GitHubを見る</a>
-      </div>
+  <!-- Training Section -->
+  <section id="training" class="py-16 px-4 max-w-4xl mx-auto">
+    <h2 class="text-2xl font-semibold mb-4">職業訓練校で取り組んだこと</h2>
+
+    <div class="mb-8">
+      <h3 class="text-xl font-bold mb-2">■ 読んだ本・教材</h3>
+      <ul id="training-list" class="list-disc list-inside text-gray-700 space-y-2"></ul>
     </div>
+
+    <div>
+      <h3 class="text-xl font-bold mb-2">■ 実践ログ（タイムライン）</h3>
+      <ul id="training-timeline" class="border-l-2 border-indigo-500 pl-4 space-y-4">
+        <!-- JSONから動的に追加 -->
+      </ul>
+    </div>
+  </section>
+
+  <!-- Works Section -->
+  <section id="works" class="py-16 px-4 max-w-5xl mx-auto">
+    <h2 class="text-2xl font-semibold mb-6">制作物一覧</h2>
+    <div id="works-list" class="grid md:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- Job Log Section -->
+  <section id="joblog" class="py-16 px-4 max-w-3xl mx-auto">
+    <h2 class="text-2xl font-semibold mb-4">就職活動ログ</h2>
+    <ul id="joblog-list" class="space-y-4 text-gray-700"></ul>
   </section>
 
   <!-- Footer -->
   <footer class="text-center text-sm py-8 text-gray-500">
     &copy; 2025 og3 - 全ての記録は日々の積み重ねから。
   </footer>
+
+  <script>
+    // training.json
+    fetch('data/training.json')
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById('training-list');
+        data.curriculum.forEach(item => {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = item.link;
+          a.textContent = item.title;
+          a.target = '_blank';
+          a.className = 'text-indigo-600 hover:underline';
+          li.appendChild(a);
+          list.appendChild(li);
+        });
+
+        const timeline = document.getElementById('training-timeline');
+        data.timeline.forEach(entry => {
+          const li = document.createElement('li');
+          li.innerHTML = `<div><span class="font-bold text-indigo-600">${entry.date}</span> - ${entry.event}</div>`;
+          timeline.appendChild(li);
+        });
+      });
+
+    // works.json
+    fetch('data/works.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('works-list');
+        data.forEach(work => {
+          const div = document.createElement('div');
+          div.className = 'bg-white p-4 rounded shadow';
+          div.innerHTML = `
+            <h3 class="text-lg font-bold">${work.title}</h3>
+            <p class="text-sm text-gray-600">${work.description}</p>
+            <a href="${work.link}" class="text-indigo-600 text-sm mt-2 inline-block" target="_blank">GitHubを見る</a>
+          `;
+          container.appendChild(div);
+        });
+      });
+
+    // joblog.json
+    fetch('data/joblog.json')
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById('joblog-list');
+        data.forEach(entry => {
+          const li = document.createElement('li');
+          li.innerHTML = `<strong>${entry.date}:</strong> ${entry.event}`;
+          list.appendChild(li);
+        });
+      });
+  </script>
 </body>
 </html>
