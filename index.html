@@ -107,7 +107,8 @@
           div.className = 'bg-white p-4 rounded shadow';
           div.innerHTML = `
             <h3 class="text-lg font-bold">${work.title}</h3>
-            <p class="text-sm text-gray-600">${work.description}</p>
+            <p class="text-sm text-gray-600 mb-1">${work.description}</p>
+            <p class="text-xs text-gray-500">技術: ${work.techs ? work.techs.join(', ') : ''}</p>
             <a href="${work.link}" class="text-indigo-600 text-sm mt-2 inline-block" target="_blank">GitHubを見る</a>
           `;
           container.appendChild(div);
