@@ -58,7 +58,7 @@
 
   <script>
     // training.json
-    fetch('data/training.json')
+    fetch('datas/training.json')
       .then(res => res.json())
       .then(data => {
         const list = document.getElementById('training-list');
@@ -82,7 +82,7 @@
       });
 
     // works.json
-    fetch('data/works.json')
+    fetch('datas/works.json')
       .then(res => res.json())
       .then(data => {
         const container = document.getElementById('works-list');
@@ -99,7 +99,7 @@
       });
 
     // joblog.json
-    fetch('data/joblog.json')
+    fetch('datas/joblog.json')
       .then(res => res.json())
       .then(data => {
         const list = document.getElementById('joblog-list');
