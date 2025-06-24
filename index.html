@@ -47,9 +47,7 @@
 
     <div>
       <h3 class="text-xl font-bold mb-2">■ 実践ログ（タイムライン）</h3>
-      <ul id="training-timeline" class="border-l-2 border-indigo-500 pl-4 space-y-4">
-        <!-- JSONから動的に追加 -->
-      </ul>
+      <ul id="training-timeline" class="border-l-2 border-indigo-500 pl-4 space-y-4"></ul>
     </div>
   </section>
 
@@ -62,6 +60,9 @@
   <!-- Job Log Section -->
   <section id="joblog" class="py-16 px-4 max-w-3xl mx-auto">
     <h2 class="text-2xl font-semibold mb-4">就職活動ログ</h2>
+    <p class="mb-6 text-sm text-gray-600">
+      ※この記録は、採用企業に向けた「活動履歴」としてだけでなく、他の職業訓練生にとっての「リアルな実録」としても残しています。
+    </p>
     <ul id="joblog-list" class="space-y-4 text-gray-700"></ul>
   </section>
 
@@ -100,7 +101,6 @@
           const content = document.createElement('span');
           content.innerHTML = ` - ${entry.event}`;
 
-          // リンクの装飾を追加
           content.querySelectorAll('a').forEach(link => {
             link.className = 'text-indigo-600 hover:underline';
           });
