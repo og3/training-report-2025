@@ -82,8 +82,16 @@
 
           const wrapper = document.createElement('div');
           wrapper.appendChild(span);
-          wrapper.insertAdjacentHTML('beforeend', ` - ${entry.event}`);
 
+          const content = document.createElement('span');
+          content.innerHTML = ` - ${entry.event}`;
+
+          // リンクの装飾を追加
+          content.querySelectorAll('a').forEach(link => {
+            link.className = 'text-indigo-600 hover:underline';
+          });
+
+          wrapper.appendChild(content);
           li.appendChild(wrapper);
           timeline.appendChild(li);
         });
