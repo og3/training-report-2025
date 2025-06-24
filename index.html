@@ -100,12 +100,13 @@
 
           const content = document.createElement('span');
           content.innerHTML = ` - ${entry.event}`;
+          wrapper.appendChild(content);
 
+          // 追加：aタグのclass設定を適切に反映
           content.querySelectorAll('a').forEach(link => {
             link.className = 'text-indigo-600 hover:underline';
           });
 
-          wrapper.appendChild(content);
           li.appendChild(wrapper);
           timeline.appendChild(li);
         });
@@ -136,7 +137,11 @@
         const list = document.getElementById('joblog-list');
         if (data.summary) {
           const summaryLi = document.createElement('li');
-          summaryLi.innerHTML = `<strong>前提:</strong><br>${data.summary.map(p => `・${p}`).join('<br>')}`;
+          summaryLi.innerHTML = `
+            <strong>前提:</strong><br>
+            ・${data.summary.experience}<br>
+            ・${data.summary.conditions}
+          `;
           list.appendChild(summaryLi);
         }
         if (data.timeline) {
