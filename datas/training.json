@@ -28,7 +28,7 @@
     },
     {
       "date": "1月22～28日",
-      "event": "クラスやオブジェクトを使ってみるために、カードゲーム「ブラックジャック」を題材にしたCUIゲームを作る。rubyっぽい開発がしたかったので、<a href=\"https://github.com/og3/21/commit/62de755310e9c9a6f204a04840fca72d0111c475\" target=\"_blank\">pytest</a>や<a href=\"https://github.com/og3/21/commit/33037bca0d52b3ac710739699945bf91d57c09b9\" target=\"_blank\">black</a>を導入して、保守性の高いコードができるようになる。。＠『21』"
+      "event": "クラスやオブジェクトを使ってみるために、カードゲーム「ブラックジャック」を題材にしたCUIゲームを作る。rubyっぽい開発がしたかったので、<a href=\"https://github.com/og3/21/commit/62de755310e9c9a6f204a04840fca72d0111c475\" target=\"_blank\">pytest</a>や<a href=\"https://github.com/og3/21/commit/33037bca0d52b3ac710739699945bf91d57c09b9\" target=\"_blank\">black</a>を導入して、保守性の高いコードができるようになる。＠『21』"
     },
     {
       "date": "1月29日～2月7日",
