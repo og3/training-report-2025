@@ -1,0 +1,58 @@
+{
+  "curriculum": [
+    {
+      "title": "『やさしいPython』：高橋麻奈　著",
+      "link": "https://www.sbcr.jp/product/4797396027/"
+    },
+    {
+      "title": "『スッキリわかるPythonによる機械学習入門 第2版』：須藤 秋良　著/株式会社フレアリンク　監修",
+      "link": "https://book.impress.co.jp/books/1124101073"
+    },
+    {
+      "title": "『新しいLinuxの教科書　第２版』：三宅英明　著 / 大角 祐介　著",
+      "link": "https://www.sbcr.jp/product/4815624316/"
+    },
+    {
+      "title": "『カラー図解　Raspberry Piではじめる機械学習』：金丸 隆志　著",
+      "link": "https://gendai.media/list/books/bluebacks/9784065020524"
+    },
+    {
+      "title": "『これ1冊でできる！ラズベリー･パイ 超入門 改訂第8版』：福田和宏　著",
+      "link": "http://www.sotechsha.co.jp/pc/html/1333.htm"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "1月14～17日",
+      "event": "pythonを使って初めて自作のコードを書く。＠『study_timer』"
+    },
+    {
+      "date": "1月22～28日",
+      "event": "カードゲーム『ブラックジャック』のCUIゲームを作成。[pytest](https://github.com/og3/21/commit/62de755310e9c9a6f204a04840fca72d0111c475)や[black](https://github.com/og3/21/commit/33037bca0d52b3ac710739699945bf91d57c09b9)を導入。＠『21』"
+    },
+    {
+      "date": "1月29日～2月7日",
+      "event": "『21』のCPU強化にランダムフォレストを使用。[コードはこちら](https://github.com/og3/21/blob/master/datas/npc_style_data/generate_npc_style_data.py)"
+    },
+    {
+      "date": "2月6～7日",
+      "event": "引越し先の回線速度調査用スクリプトを作成。[結果表](https://docs.google.com/spreadsheets/d/1ydmCWBJR59Ars2bMpA9ru-O0KPv52NzAzD6sRuLYYDY/edit?gid=0#gid=0)＠『speedtest』"
+    },
+    {
+      "date": "2月8日～",
+      "event": "sklearnで機械学習に挑戦するも、数学的理解に壁。ヨビノリ等で補強中。"
+    },
+    {
+      "date": "2月17〜27日",
+      "event": "文字列を使ったモデル構築を目指し、レビュー再評価ツールを試作。[経緯](https://docs.google.com/spreadsheets/d/1X0Ecs4NomNFioqBZDX0kqV6hGc3vVrX_hyu8REYyJTM/edit?gid=640155923#gid=640155923)"
+    },
+    {
+      "date": "3月24日～4月4日",
+      "event": "電気使用量予測モデルを作成するも、特徴量設計に課題。[失敗記録](https://github.com/og3/denkiyohou/issues)"
+    },
+    {
+      "date": "6月4～5日",
+      "event": "QRカメラの暴走・高温問題を解決、音声フィードバックも追加。[GitHub](https://github.com/og3/qrcode_in_out_management_with_Raspberry_Pi)"
+    }
+  ]
+}
