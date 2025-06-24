@@ -4,19 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>訓練成果ポートフォリオ</title>
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .hero-bg {
-      background-image: url('images/hero-bg.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
   <!-- Hero Section -->
@@ -32,8 +21,6 @@
   <section id="about" class="py-16 px-4 max-w-4xl mx-auto bg-gray-50 rounded-lg shadow mt-16">
     <h2 class="text-2xl font-semibold mb-4">自己紹介</h2>
     <p id="about-text" class="leading-relaxed mb-4"></p>
-    
-    <!-- GitHub アイコン -->
     <div class="mt-4">
       <a href="https://github.com/og3" target="_blank" class="inline-flex items-center text-indigo-600 hover:text-indigo-800">
         <svg class="w-6 h-6 mr-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -47,14 +34,11 @@
   <!-- Training Section -->
   <section id="training" class="py-16 px-4 max-w-4xl mx-auto">
     <h2 class="text-2xl font-semibold mb-4">職業訓練校で取り組んだこと</h2>
-    <p class="mb-6 text-sm">
-      職業訓練の内容は、主に以下の書籍を読んで実際に動かしてみる、という内容です。
-    </p>
+    <p class="mb-6 text-sm">職業訓練の内容は、主に以下の書籍を読んで実際に動かしてみる、という内容です。</p>
     <div class="mb-8">
       <h3 class="text-xl font-bold mb-2">■ 読んだ本・教材</h3>
       <ul id="training-list" class="list-disc list-inside text-gray-700 space-y-2"></ul>
     </div>
-
     <div>
       <h3 class="text-xl font-bold mb-2">■ 実践ログ（タイムライン）</h3>
       <ul id="training-timeline" class="border-l-2 border-indigo-500 pl-4 space-y-4"></ul>
@@ -64,28 +48,22 @@
   <!-- Works Section -->
   <section id="works" class="py-16 px-4 max-w-5xl mx-auto">
     <h2 class="text-2xl font-semibold mb-6">制作物一覧</h2>
-    <p class="mb-6 text-sm">
-      職業訓練校で習った知識を使って制作した作品です。
-    </p>
+    <p class="mb-6 text-sm">職業訓練校で習った知識を使って制作した作品です。</p>
     <div id="works-list" class="grid md:grid-cols-3 gap-6"></div>
   </section>
 
   <!-- Job Log Section -->
   <section id="joblog" class="py-16 px-4 max-w-4xl mx-auto">
     <h2 class="text-2xl font-semibold mb-4">就職活動ログ</h2>
-    <p class="mb-6 text-sm">
-      採用企業様、他の職業訓練生の皆さんにとって参考になれば幸いです。
-    </p>
+    <p class="mb-6 text-sm">採用企業様、他の職業訓練生の皆さんにとって参考になれば幸いです。</p>
     <div class="mb-8">
       <h3 class="text-xl font-bold mb-2">■ 前提</h3>
       <ul id="joblog-summary" class="list-disc list-inside text-gray-700 space-y-2"></ul>
     </div>
-
     <div class="mb-8">
       <h3 class="text-xl font-bold mb-2">■ タイムライン</h3>
       <ul id="joblog-list" class="border-l-2 border-indigo-500 pl-4 space-y-4"></ul>
     </div>
-
     <div>
       <h3 class="text-xl font-bold mb-2">■ 所感</h3>
       <ul id="joblog-notes" class="list-disc list-inside text-gray-700 space-y-2"></ul>
@@ -97,115 +75,6 @@
     &copy; 2025 og3 - 全ての記録は日々の積み重ねから。
   </footer>
 
-  <script>
-    // about.json 読み込み
-    fetch('datas/about.json')
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById('about-text').textContent = data.text;
-    });
-
-    // training.json
-    fetch('datas/training.json')
-      .then(res => res.json())
-      .then(data => {
-        const list = document.getElementById('training-list');
-        data.curriculum.forEach(item => {
-          const li = document.createElement('li');
-          const a = document.createElement('a');
-          a.href = item.link;
-          a.textContent = item.title;
-          a.target = '_blank';
-          a.className = 'text-indigo-600 hover:underline';
-          li.appendChild(a);
-          list.appendChild(li);
-        });
-
-        const timeline = document.getElementById('training-timeline');
-        data.timeline.forEach(entry => {
-          const li = document.createElement('li');
-          const span = document.createElement('span');
-          span.className = 'font-bold text-indigo-600';
-          span.textContent = entry.date;
-
-          const wrapper = document.createElement('div');
-          wrapper.appendChild(span);
-
-          const content = document.createElement('span');
-          content.innerHTML = ` - ${entry.event}`;
-          wrapper.appendChild(content);
-
-          content.querySelectorAll('a').forEach(link => {
-            link.className = 'text-indigo-600 hover:underline';
-          });
-
-          li.appendChild(wrapper);
-          timeline.appendChild(li);
-        });
-      });
-
-    // works.json
-    fetch('datas/works.json')
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById('works-list');
-        data.forEach(work => {
-          const div = document.createElement('div');
-          div.className = 'bg-white p-4 rounded shadow';
-          div.innerHTML = `
-            <h3 class="text-lg font-bold">${work.title}</h3>
-            <p class="text-sm text-gray-600 mb-1">${work.description}</p>
-            <p class="text-xs text-gray-500">技術: ${work.techs ? work.techs.join(', ') : ''}</p>
-            <a href="${work.link}" class="text-indigo-600 text-sm mt-2 inline-block" target="_blank">GitHubを見る</a>
-          `;
-          container.appendChild(div);
-        });
-      });
-
-    // joblog.json
-    fetch('datas/joblog.json')
-      .then(res => res.json())
-      .then(data => {
-        const summaryList = document.getElementById('joblog-summary');
-        const timelineList = document.getElementById('joblog-list');
-        const notesList = document.getElementById('joblog-notes');
-
-        if (data.summary) {
-          const summaryItems = [data.summary.experience, data.summary.conditions];
-          summaryItems.forEach(text => {
-            const li = document.createElement('li');
-            li.textContent = text;
-            summaryList.appendChild(li);
-          });
-        }
-
-        if (data.timeline) {
-          data.timeline.forEach(entry => {
-            const li = document.createElement('li');
-            const span = document.createElement('span');
-            span.className = 'font-bold text-indigo-600';
-            span.textContent = entry.date;
-
-            const wrapper = document.createElement('div');
-            wrapper.appendChild(span);
-
-            const content = document.createElement('span');
-            content.innerHTML = ` - ${entry.event}`;
-            wrapper.appendChild(content);
-
-            li.appendChild(wrapper);
-            timelineList.appendChild(li);
-          });
-        }
-
-        if (data.notes) {
-          data.notes.forEach(note => {
-            const li = document.createElement('li');
-            li.textContent = note;
-            notesList.appendChild(li);
-          });
-        }
-      });
-  </script>
+  <script src="javascript/main.js"></script>
 </body>
 </html>
