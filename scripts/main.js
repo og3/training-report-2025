@@ -69,6 +69,7 @@ fetch('datas/joblog.json')
     const summaryList = document.getElementById('joblog-summary');
     const timelineList = document.getElementById('joblog-list');
     const notesList = document.getElementById('joblog-notes');
+    const tbody = document.querySelector('#agent-table tbody');
 
     if (data.summary) {
         const summaryItems = [data.summary.experience, data.summary.conditions];
@@ -107,8 +108,7 @@ fetch('datas/joblog.json')
     }
 
     if (data.agents) {
-    const tbody = document.querySelector('#agent-table tbody');
-    data.agents.forEach(agent => {
+        data.agents.forEach(agent => {
         const row = document.createElement('tr');
         row.innerHTML = `
         <td class="px-4 py-2 border">${agent.name}</td>
@@ -119,5 +119,6 @@ fetch('datas/joblog.json')
         tbody.appendChild(row);
     });
     }
+
     });
 
