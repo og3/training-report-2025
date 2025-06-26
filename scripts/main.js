@@ -32,7 +32,7 @@ fetch('datas/training.json')
         wrapper.appendChild(span);
 
         const content = document.createElement('span');
-        content.innerHTML = ` - ${entry.event}`;
+        content.innerHTML = ` : ${entry.event}`;
         wrapper.appendChild(content);
 
         content.querySelectorAll('a').forEach(link => {
@@ -91,7 +91,7 @@ fetch('datas/joblog.json')
         wrapper.appendChild(span);
 
         const content = document.createElement('span');
-        content.innerHTML = ` - ${entry.event}`;
+        content.innerHTML = ` : ${entry.event}`;
         wrapper.appendChild(content);
 
         li.appendChild(wrapper);
