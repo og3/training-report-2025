@@ -52,7 +52,7 @@
     },
     {
       "date": "6月4～5日",
-      "event": "QRカメラの「起動しすぎ問題」による熱暴走を解決し、読み取り完了を音で知らせる機能を追加。<a href=\"https://github.com/og3/qrcode_in_out_management_with_Raspberry_Pi\" target=\"_blank\">GitHub</a>"
+      "event": "赤外線センサーでQRカメラの「起動しすぎ問題」による熱暴走を解決し、読み取り完了を音で知らせる機能を追加。<a href=\"https://github.com/og3/qrcode_in_out_management_with_Raspberry_Pi\" target=\"_blank\">コードはこちら</a>"
     }
   ]
 }
