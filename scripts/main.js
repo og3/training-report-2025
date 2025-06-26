@@ -105,4 +105,19 @@ fetch('datas/joblog.json')
         notesList.appendChild(li);
         });
     }
+
+    if (data.agents) {
+    const tbody = document.querySelector('#agent-table tbody');
+    data.agents.forEach(agent => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+        <td class="px-4 py-2 border">${agent.name}</td>
+        <td class="px-4 py-2 border">${agent.features}</td>
+        <td class="px-4 py-2 border">${agent.satisfaction}</td>
+        <td class="px-4 py-2 border">${agent.notes}</td>
+        `;
+        tbody.appendChild(row);
     });
+    }
+    });
+
