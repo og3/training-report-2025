@@ -1,0 +1,58 @@
+{
+  "curriculum": [
+    {
+      "title": "『やさしいPython』：高橋麻奈　著",
+      "link": "https://www.sbcr.jp/product/4797396027/"
+    },
+    {
+      "title": "『スッキリわかるPythonによる機械学習入門 第2版』：須藤 秋良　著/株式会社フレアリンク　監修",
+      "link": "https://book.impress.co.jp/books/1124101073"
+    },
+    {
+      "title": "『新しいLinuxの教科書　第２版』：三宅英明　著 / 大角 祐介　著",
+      "link": "https://www.sbcr.jp/product/4815624316/"
+    },
+    {
+      "title": "『カラー図解　Raspberry Piではじめる機械学習』：金丸 隆志　著",
+      "link": "https://gendai.media/list/books/bluebacks/9784065020524"
+    },
+    {
+      "title": "『これ1冊でできる！ラズベリー･パイ 超入門 改訂第8版』：福田和宏　著",
+      "link": "http://www.sotechsha.co.jp/pc/html/1333.htm"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "1月14～17日",
+      "event": "pythonを使って初めて自作のコードを書く。=>逆にrubyの良さを認識する。＠『study_timer』"
+    },
+    {
+      "date": "1月22～28日",
+      "event": "クラスやオブジェクトを使ってみるために、カードゲーム「ブラックジャック」を題材にしたCUIゲームを作る。rubyっぽい開発がしたかったので、<a href=\"https://github.com/og3/21/commit/62de755310e9c9a6f204a04840fca72d0111c475\" target=\"_blank\">pytest</a>や<a href=\"https://github.com/og3/21/commit/33037bca0d52b3ac710739699945bf91d57c09b9\" target=\"_blank\">black</a>を導入して、保守性の高いコードができるようになる。＠『21』"
+    },
+    {
+      "date": "1月29日～2月7日",
+      "event": "『21』のCPU強化にランダムフォレストを使用。が、「モデルを積んだCPUが打つ手が妥当なのか」をうまく検証できなかったのでモヤモヤする。=>学習データを割合でブレンドしてもそれはif分岐と変わらないんじゃないか？とか、そもそもランダムフォレストの内部ロジックがブラックボックスでどうやってテストしたモノか迷う。<a href=\"https://github.com/og3/21/blob/master/datas/npc_style_data/generate_npc_style_data.py\" target=\"_blank\">コードはこちら</a>"
+    },
+    {
+      "date": "2月6～7日",
+      "event": "引越し先の回線速度調査用スクリプトを作成。=>集合住宅でネット回線分配式だと住人の生活リズムがわかる。<a href=\"https://docs.google.com/spreadsheets/d/1ydmCWBJR59Ars2bMpA9ru-O0KPv52NzAzD6sRuLYYDY/edit?gid=0#gid=0\" target=\"_blank\">結果表</a>＠『speedtest』"
+    },
+    {
+      "date": "2月8日～",
+      "event": "『sklearn』等のライブラリの使い方はわかったが、機械学習の概念はほとんどわからなかったので、『ヨビノリ』などで、数学的なところを勉強してみる。が、数学の抽象概念から実データ（じゃんけんの手など）の橋渡しができずに、実装に生かすまでは至らず。"
+    },
+    {
+      "date": "2月17〜27日",
+      "event": "『sudachi』や『mecab』を使った形態素解析で文字列を使ったモデル構築を目指し、レビュー再評価ツールの実装を試みるも、文章を「イイ感じ」に区切れずに断念。=>機械学習の成果を数値で検証できないなら、人間が読める文字にすればいいじゃない、の発想。<a href=\"https://docs.google.com/spreadsheets/d/1X0Ecs4NomNFioqBZDX0kqV6hGc3vVrX_hyu8REYyJTM/edit?gid=640155923#gid=640155923\" target=\"_blank\">形態素解析の例</a>"
+    },
+    {
+      "date": "3月24日～4月4日",
+      "event": "電気使用量予測モデルを作成するも、特徴量設計に課題。=>文字列の処理がうまくいかないなら、「正解」がおのずと出てくる電気の消費量にすればいいじゃない、の発想。<a href=\"https://docs.google.com/spreadsheets/d/1uEETEXfFB6dMyqWXpgzFHE9-Jnd8bPNlREB8j8c7nZk/edit?pli=1&gid=236112631#gid=236112631\" target=\"_blank\">失敗記録</a>"
+    },
+    {
+      "date": "6月4～5日",
+      "event": "赤外線センサーでQRカメラの「起動しすぎ問題」による熱暴走を解決し、読み取り完了を音で知らせる機能を追加。<a href=\"https://github.com/og3/qrcode_in_out_management_with_Raspberry_Pi\" target=\"_blank\">コードはこちら</a>"
+    }
+  ]
+}

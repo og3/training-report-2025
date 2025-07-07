@@ -1,0 +1,44 @@
+[
+  {
+    "title": "study_timer",
+    "description": "職業訓練校での9:30~15:30までの時間を素敵に過ごすためのヤツ。",
+    "link": "https://github.com/og3/study_timer",
+    "techs": ["Python", "win10toast"]
+  },
+  {
+    "title": "speedtest",
+    "description": "30分ごとにSpeedtestを実行し、結果をGoogleスプレッドシートに記録するスクリプト。引越し先のネット調査に活用。",
+    "link": "https://github.com/og3/speedtest",
+    "techs": ["Python", "speedtest-cli", "gspread"]
+  },
+  {
+    "title": "21",
+    "description": "カードゲーム「ブラックジャック」を題材にしたCUIゲーム",
+    "link": "https://github.com/og3/21",
+    "techs": ["Python", "pandas", "scikit-learn"]
+  },
+  {
+    "title": "find_kuso_restaurant_from_tabelog",
+    "description": "食べログ上で評価の低い店を探し出し、店リストを生成するためのWebスクレイピングスクリプト。",
+    "link": "https://github.com/og3/find_kuso_restaurant_from_tabelog",
+    "techs": ["Python", "BeautifulSoup", "pandas"]
+  },
+  {
+    "title": "find_kuso_review_from_tabelog",
+    "description": "食べログの店URLを入力すると、その店のレビューを自動取得して評価や傾向を分析するツール。",
+    "link": "https://github.com/og3/find_kuso_review_from_tabelog",
+    "techs": ["Python", "requests", "BeautifulSoup"]
+  },
+  {
+    "title": "でんき予報",
+    "description": "日次の気象データを用いて電気使用量を予測する機械学習モデル。特徴量設計に挑戦した分析系プロジェクト。",
+    "link": "https://github.com/og3/denkiyohou",
+    "techs": ["Python", "pandas", "scikit-learn"]
+  },
+  {
+    "title": "QRコード入退室管理システム",
+    "description": "ラズパイで動作するQRコード入退室管理システム。カメラ・ブザー連携でユーザーフレンドリーな運用を実現。",
+    "link": "https://github.com/og3/qrcode_in_out_management_with_Raspberry_Pi",
+    "techs": ["Python", "OpenCV", "Raspberry Pi"]
+  }
+]
